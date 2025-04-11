@@ -14,6 +14,8 @@ const update = ({ slug, payload }) =>
     task: payload,
   });
 
-const tasksApi = { fetch, show, create, update };
+const destroy = slug => axios.delete(`/tasks/${slug}`);
+
+const tasksApi = { fetch, show, create, update, destroy };
 
 export default tasksApi;
