@@ -3,6 +3,7 @@ import React from "react";
 import { Login, Signup } from "components/Authentication";
 import { PrivateRoute } from "components/commons";
 import Dashboard from "components/Dashboard";
+import Preferences from "components/Preferences";
 import { CreateTask, EditTask, ShowTask } from "components/Tasks";
 import { either, isEmpty, isNil } from "ramda";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
@@ -23,6 +24,7 @@ const App = () => {
         <Route exact component={Dashboard} path="/dashboard" />
         <Route exact component={Signup} path="/signup" />
         <Route exact component={Login} path="/login" />
+        <Route exact component={Preferences} path="/my/preferences" />
         <PrivateRoute
           component={Dashboard}
           condition={isLoggedIn}

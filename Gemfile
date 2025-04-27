@@ -50,6 +50,8 @@ gem "pundit"
 
 gem "sidekiq"
 
+gem "sidekiq-cron"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
@@ -76,6 +78,8 @@ group :development do
   # gem "spring"
 
   gem "erb_lint", require: false, git: "https://github.com/Shopify/erb-lint.git", branch: "main"
+
+  gem "letter_opener"
 end
 
 group :test do
