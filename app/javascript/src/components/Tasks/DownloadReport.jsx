@@ -24,8 +24,16 @@ const DownloadReport = () => {
   const downloadPdf = async () => {
     setIsLoading(true);
     try {
-      const { data } = await tasksApi.download();
-      FileSaver.saveAs(data, "granite_task_report.pdf");
+      const { data, headers } = await tasksApi.download();
+      const disposition = headers["content-disposition"];
+      let filename = "granite_task_report.pdf";
+
+      if (disposition && disposition.includes("filename=")) {
+        const matches = disposition.match(/filename="?([^"]+)"?/);
+        if (matches?.[1]) filename = matches[1];
+      }
+
+      FileSaver.saveAs(data, filename);
     } catch (error) {
       logger.error(error);
     } finally {

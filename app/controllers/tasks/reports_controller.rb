@@ -15,10 +15,6 @@ class Tasks::ReportsController < ApplicationController
 
   private
 
-    def report_path
-      @_report_path ||= Rails.root.join("tmp/#{pdf_file_name}")
-    end
-
     def pdf_file_name
       "granite_task_report_#{current_user.id}_#{Time.current.strftime('%Y%m%d_%H%M%S')}.pdf"
     end
