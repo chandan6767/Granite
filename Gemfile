@@ -57,6 +57,8 @@ gem "google-cloud-storage"
 
 gem "dotenv-rails"
 
+gem "aws-sdk-s3"
+
 group :production do
   gem "pg"
 end
