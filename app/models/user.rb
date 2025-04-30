@@ -15,6 +15,7 @@ class User < ApplicationRecord
     user.has_many :comments
     user.has_many :user_notifications, foreign_key: :user_id
     user.has_one :preference, foreign_key: :user_id
+    has_one_attached :report
   end
 
   validates :name, presence: true, length: { maximum: MAX_NAME_LENGTH }
