@@ -49,6 +49,10 @@ gem "sidekiq"
 
 gem "sidekiq-cron"
 
+gem "wicked_pdf"
+
+gem "wkhtmltopdf-binary"
+
 group :production do
   gem "pg"
 end

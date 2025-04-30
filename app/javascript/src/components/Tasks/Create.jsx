@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import tasksApi from "apis/tasks";
 import usersApi from "apis/users";
 import { Container, PageLoader, PageTitle } from "components/commons";
+import Logger from "js-logger";
 
 import Form from "./Form";
 
@@ -21,7 +22,7 @@ const Create = ({ history }) => {
       setLoading(false);
       history.push("/dashboard");
     } catch (error) {
-      logger.error(error);
+      Logger.error(error);
       setLoading(false);
     }
   };
@@ -34,7 +35,7 @@ const Create = ({ history }) => {
       setUsers(users);
       setUserId(users[0].id);
     } catch (error) {
-      logger.error(error);
+      Logger.error(error);
     } finally {
       setPageLoading(false);
     }
